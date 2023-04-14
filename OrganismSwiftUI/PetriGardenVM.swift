@@ -1,6 +1,6 @@
 //
 //  PetriGardenVM.swift
-//  Organism
+//  OrganismSwiftUI
 //
 //  Created by 张文涛 on 2023/4/14.
 //

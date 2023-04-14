@@ -27,29 +27,27 @@ struct PetriGarden: View {
                             } label: {
                                 Text(dish.timestamp!, formatter: itemFormatter)
                             }
-                            .listRowBackground(Color("bgColor"))
                         }
                         .onDelete(perform: deleteItems)
                     }
                     .listStyle(.sidebar)
+                    .toolbarBackground(Color.bgColor, for: .navigationBar, .tabBar, .bottomBar)
+                    .toolbarBackground(.visible)
                     .toolbar {
 #if os(iOS)
-                        ToolbarItem(placement: .navigationBarTrailing) {
+                        ToolbarItem(placement: .navigationBarLeading) {
                             EditButton()
                         }
 #endif
-                        ToolbarItem {
+                        ToolbarItem(placement: .navigationBarTrailing) {
                             Button(action: addItem) {
                                 Label("Add Dish", systemImage: "plus")
                             }
                         }
                     }
                     // 平板可见区
-                    ZStack{
-                        Color("bgColor").ignoresSafeArea()
-                        Text("Select an dish")
+                        Text("Select an dish").modifier(BgColor())
                     // 平板可见区
-                    }
                 }
             }
         }

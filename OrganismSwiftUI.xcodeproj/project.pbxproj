@@ -18,6 +18,8 @@
 		71269FD729E926AF001453AE /* OrganismSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71269FD629E926AF001453AE /* OrganismSwiftUIUITestsLaunchTests.swift */; };
 		71269FE429E92726001453AE /* PetriGardenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71269FE329E92726001453AE /* PetriGardenModel.swift */; };
 		71269FE629E9276C001453AE /* PetriGardenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71269FE529E9276C001453AE /* PetriGardenVM.swift */; };
+		712D869329E952B7007BBBFC /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712D869229E952B7007BBBFC /* Modifiers.swift */; };
+		712D869529E955A8007BBBFC /* AssetsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712D869429E955A8007BBBFC /* AssetsConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		71269FD629E926AF001453AE /* OrganismSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganismSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		71269FE329E92726001453AE /* PetriGardenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetriGardenModel.swift; sourceTree = "<group>"; };
 		71269FE529E9276C001453AE /* PetriGardenVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetriGardenVM.swift; sourceTree = "<group>"; };
+		712D869229E952B7007BBBFC /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		712D869429E955A8007BBBFC /* AssetsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +110,9 @@
 				71269FB329E926AE001453AE /* OrganismSwiftUIApp.swift */,
 				71269FB529E926AE001453AE /* Persistence.swift */,
 				71269FBA29E926AE001453AE /* PetriGarden.swift */,
+				712D869429E955A8007BBBFC /* AssetsConstants.swift */,
 				71269FE529E9276C001453AE /* PetriGardenVM.swift */,
+				712D869229E952B7007BBBFC /* Modifiers.swift */,
 				71269FE329E92726001453AE /* PetriGardenModel.swift */,
 				71269FBC29E926AF001453AE /* Assets.xcassets */,
 				71269FBE29E926AF001453AE /* OrganismSwiftUI.entitlements */,
@@ -271,8 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				712D869529E955A8007BBBFC /* AssetsConstants.swift in Sources */,
 				71269FB429E926AE001453AE /* OrganismSwiftUIApp.swift in Sources */,
 				71269FB929E926AE001453AE /* OrganismSwiftUI.xcdatamodeld in Sources */,
+				712D869329E952B7007BBBFC /* Modifiers.swift in Sources */,
 				71269FE629E9276C001453AE /* PetriGardenVM.swift in Sources */,
 				71269FE429E92726001453AE /* PetriGardenModel.swift in Sources */,
 				71269FBB29E926AE001453AE /* PetriGarden.swift in Sources */,
