@@ -13,7 +13,7 @@ struct OrganismSwiftUIApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PetriGarden()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
