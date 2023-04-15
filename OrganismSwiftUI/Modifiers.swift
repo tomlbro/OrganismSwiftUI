@@ -10,7 +10,7 @@ import SwiftUI
 struct BgColor: ViewModifier {
     func body(content: Content) -> some View {
         ZStack {
-            Color("bgColor").ignoresSafeArea()
+            Color.colorSky.ignoresSafeArea()
             content
         }
     }

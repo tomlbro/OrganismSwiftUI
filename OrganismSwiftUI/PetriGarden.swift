@@ -23,36 +23,49 @@ struct PetriGarden: View {
                     List {
                         ForEach(dishes) { dish in
                             NavigationLink {
-                                Text("Dish at \(dish.timestamp!, formatter: itemFormatter)")
+                                Text("Dish at \(dish.timestamp!, formatter: itemFormatter)").modifier(BgColor())
                             } label: {
                                 Text(dish.timestamp!, formatter: itemFormatter)
                             }
                         }
                         .onDelete(perform: deleteItems)
+                        .listRowBackground(Color.colorBarDrinks)
                     }
-                    .listStyle(.sidebar)
-                    .toolbarBackground(Color.bgColor, for: .navigationBar, .tabBar, .bottomBar)
+                    .environment(\.defaultMinListHeaderHeight, 16)
+                    .listStyle(.insetGrouped)
+                    .toolbarBackground(Color.teal, for: .navigationBar, .tabBar, .bottomBar)
                     .toolbarBackground(.visible)
                     .toolbar {
-#if os(iOS)
+#if TARGET_OS_IPAD
                         ToolbarItem(placement: .navigationBarLeading) {
-                            EditButton()
+                            EditButton().foregroundColor(Color.primary)
+
+                        }
+#else
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            EditButton().foregroundColor(Color.primary)
                         }
 #endif
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button(action: addItem) {
-                                Label("Add Dish", systemImage: "plus")
+                                Label("Add Dish", systemImage: "plus").foregroundColor(Color.primary)
                             }
                         }
                     }
-                    // 平板可见区
-                        Text("Select an dish").modifier(BgColor())
-                    // 平板可见区
+                    // 平板初始可见区
+                    Text("Select an dish").modifier(BgColor())
+                    // 平板初始可见区
                 }
             }
         }
     }
+}
 
+extension View{
+    
+}
+
+extension PetriGarden{
     private func addItem() {
         withAnimation {
             let newDish = Dish(context: viewContext)
