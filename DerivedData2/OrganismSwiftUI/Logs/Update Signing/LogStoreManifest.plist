@@ -34,6 +34,9 @@
 			<key>uniqueIdentifier</key>
 			<string>2AC45E95-061C-4CC4-89A0-7039FD316711</string>
 		</dict>
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		<key>3D4E0393-DC7F-4E97-858A-732928AD604A</key>
 		<dict>
 			<key>className</key>
@@ -90,6 +93,12 @@
 			<key>uniqueIdentifier</key>
 			<string>C7B71B13-27D4-47EE-88E6-211B0137A2F6</string>
 		</dict>
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 	</dict>
 </dict>
 </plist>

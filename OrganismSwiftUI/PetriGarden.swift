@@ -20,40 +20,23 @@ struct PetriGarden: View {
         GeometryReader { proxy in
             VStack{
                 NavigationView {
-                    List {
-                        ForEach(dishes) { dish in
-                            NavigationLink {
-                                Text("Dish at \(dish.timestamp!, formatter: itemFormatter)").modifier(BgColor())
-                            } label: {
-                                Text(dish.timestamp!, formatter: itemFormatter)
-                            }
-                        }
-                        .onDelete(perform: deleteItems)
-                        .listRowBackground(Color.colorBarDrinks)
-                    }
+                    listOfDishes
                     .environment(\.defaultMinListHeaderHeight, 16)
                     .listStyle(.insetGrouped)
                     .toolbarBackground(Color.teal, for: .navigationBar, .tabBar, .bottomBar)
                     .toolbarBackground(.visible)
                     .toolbar {
-#if TARGET_OS_IPAD
-                        ToolbarItem(placement: .navigationBarLeading) {
-                            EditButton().foregroundColor(Color.primary)
-
-                        }
-#else
                         ToolbarItem(placement: .navigationBarTrailing) {
                             EditButton().foregroundColor(Color.primary)
                         }
-#endif
                         ToolbarItem(placement: .navigationBarTrailing) {
-                            Button(action: addItem) {
-                                Label("Add Dish", systemImage: "plus").foregroundColor(Color.primary)
+                            Button(action: newDish) {
+                                Label("Get A New Dish", systemImage: "plus").foregroundColor(Color.primary)
                             }
                         }
                     }
                     // 平板初始可见区
-                    Text("Select an dish").modifier(BgColor())
+                    bgColor(.colorSky){ Text("Select a dish from Sideboard") }
                     // 平板初始可见区
                 }
             }
@@ -62,11 +45,35 @@ struct PetriGarden: View {
 }
 
 extension View{
-    
+    func bgColor(_ color: Color, content: (()->some View)? = nil) -> some View{
+        return ZStack {
+            color.ignoresSafeArea()
+            content?()
+        }
+    }
 }
 
 extension PetriGarden{
-    private func addItem() {
+    
+    private var listOfDishes: some View{
+        List {
+            ForEach(dishes) { dish in
+                NavigationLink {
+                    Text("Dish at \(dish.timestamp!, formatter: itemFormatter)").modifier(BgColor())
+                } label: {
+                    Text(dish.timestamp!, formatter: itemFormatter)
+                }
+            }
+            .onDelete(perform: deleteItems)
+            .listRowBackground(Color.colorBarDrinks)
+        }
+#if TARGET_OS_IPAD
+        .padding(.top, 16.0)
+#endif
+
+    }
+    
+    private func newDish() {
         withAnimation {
             let newDish = Dish(context: viewContext)
             newDish.timestamp = Date()
