@@ -20,6 +20,7 @@
 		71269FE629E9276C001453AE /* PetriGardenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71269FE529E9276C001453AE /* PetriGardenVM.swift */; };
 		712D869329E952B7007BBBFC /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712D869229E952B7007BBBFC /* Modifiers.swift */; };
 		712D869529E955A8007BBBFC /* AssetsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712D869429E955A8007BBBFC /* AssetsConstants.swift */; };
+		7181348D29F1757600FA5EA3 /* DishModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181348C29F1757600FA5EA3 /* DishModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		71269FE529E9276C001453AE /* PetriGardenVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetriGardenVM.swift; sourceTree = "<group>"; };
 		712D869229E952B7007BBBFC /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		712D869429E955A8007BBBFC /* AssetsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsConstants.swift; sourceTree = "<group>"; };
+		7181348C29F1757600FA5EA3 /* DishModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,9 +112,9 @@
 				71EC804429EAA394004EED49 /* Common */,
 				71269FBA29E926AE001453AE /* PetriGarden.swift */,
 				712D869429E955A8007BBBFC /* AssetsConstants.swift */,
-				71269FE529E9276C001453AE /* PetriGardenVM.swift */,
 				712D869229E952B7007BBBFC /* Modifiers.swift */,
-				71269FE329E92726001453AE /* PetriGardenModel.swift */,
+				7181348B29F1754100FA5EA3 /* ViewModel */,
+				7181348A29F1753A00FA5EA3 /* Model */,
 				71269FBC29E926AF001453AE /* Assets.xcassets */,
 				71269FBE29E926AF001453AE /* OrganismSwiftUI.entitlements */,
 				71269FB729E926AE001453AE /* OrganismSwiftUI.xcdatamodeld */,
@@ -146,13 +148,28 @@
 			path = OrganismSwiftUIUITests;
 			sourceTree = "<group>";
 		};
+		7181348A29F1753A00FA5EA3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71269FE329E92726001453AE /* PetriGardenModel.swift */,
+				7181348C29F1757600FA5EA3 /* DishModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7181348B29F1754100FA5EA3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				71269FE529E9276C001453AE /* PetriGardenVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		71EC804429EAA394004EED49 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				71269FB329E926AE001453AE /* OrganismSwiftUIApp.swift */,
 				71269FB529E926AE001453AE /* Persistence.swift */,
-				712D869429E955A8007BBBFC /* AssetsConstants.swift */,
-				712D869229E952B7007BBBFC /* Modifiers.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -291,6 +308,7 @@
 				71269FB429E926AE001453AE /* OrganismSwiftUIApp.swift in Sources */,
 				71269FB929E926AE001453AE /* OrganismSwiftUI.xcdatamodeld in Sources */,
 				712D869329E952B7007BBBFC /* Modifiers.swift in Sources */,
+				7181348D29F1757600FA5EA3 /* DishModel.swift in Sources */,
 				71269FE629E9276C001453AE /* PetriGardenVM.swift in Sources */,
 				71269FE429E92726001453AE /* PetriGardenModel.swift in Sources */,
 				71269FBB29E926AE001453AE /* PetriGarden.swift in Sources */,

@@ -15,3 +15,19 @@ struct BgColor: ViewModifier {
         }
     }
 }
+
+struct BgBtn: ViewModifier {
+    
+    
+    func body(content: Content) -> some View {
+        ZStack{
+            content
+            Button {
+                PetriGardenVM().printMap()
+            } label: {
+                Text("点击")
+            }
+
+        }
+    }
+}

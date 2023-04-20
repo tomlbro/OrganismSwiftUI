@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import UIKit
 import CoreData
 
 struct PetriGarden: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @StateObject private var vm = PetriGardenVM()
+    let points:Points = Points()
     
     private let itemFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -33,9 +36,9 @@ struct PetriGarden: View {
                     .toolbarBackground(Color.teal, for: .navigationBar, .tabBar, .bottomBar)
                     .toolbarBackground(.visible)
                     .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            EditButton().foregroundColor(Color.primary)
-                        }
+//                        ToolbarItem(placement: .navigationBarTrailing) {
+//                            EditButton().foregroundColor(Color.primary)
+//                        }
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button(action: newDish) {
                                 Label("Get A New Dish", systemImage: "plus").foregroundColor(Color.primary)
@@ -66,7 +69,7 @@ extension PetriGarden{
         List {
             ForEach(dishes) { dish in
                 NavigationLink {
-                    Text("Dish at \(dish.timestamp!, formatter: itemFormatter)").modifier(BgColor())
+                    Text("Dish at \(dish.timestamp!, formatter: itemFormatter)").modifier(BgColor()).modifier(BgBtn())
                 } label: {
                     Text(dish.timestamp!, formatter: itemFormatter)
                 }
