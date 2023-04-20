@@ -10,7 +10,14 @@ import CoreData
 
 struct PetriGarden: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    
+    private let itemFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .medium
+        return formatter
+    }()
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Dish.timestamp, ascending: true)],
         animation: .default)
@@ -66,6 +73,7 @@ extension PetriGarden{
             }
             .onDelete(perform: deleteItems)
             .listRowBackground(Color.colorBarDrinks)
+            .padding(.horizontal, 4)
         }
 #if TARGET_OS_IPAD
         .padding(.top, 16.0)
@@ -103,12 +111,6 @@ extension PetriGarden{
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
 struct PetriGarden_Previews: PreviewProvider {
     static var previews: some View {
